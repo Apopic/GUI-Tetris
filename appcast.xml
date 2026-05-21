@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://andymatuschak.org" xmlns:dc="http://purl.org">
+    <channel>
+        <title>GUI-Tetris</title>
+        <link>https://Apopoc.github.io/GUI-Tetris/appcast.xml</link>
+        <description>最新のアップデート情報</description>
+        <language>ja</language>
+        <item>
+            <title>バージョン 0.2</title>
+            <sparkle:releaseNotesLink>https://Apopic.github.io/GUI-Tetris/release_notes.html</sparkle:releaseNotesLink>
+            <pubDate>Fri, 22 May 2026 12:00:00 +0900</pubDate>
+            <sparkle:minimumSystemVersion>10.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Apopic/GUI-Tetris/releases/download/v0.2/GUI-Tetris.zip" sparkle:version="0.2" sparkle:shortVersionString="0.2" length="12345678" type="application/octet-stream" sparkle:edSignature="ここで生成した署名" />
+        </item>
+    </channel>
+</rss>
