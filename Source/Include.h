@@ -1,0 +1,9 @@
+#pragma once
+#include "Game/Multi.cpp"
+#include "Game/Init.cpp"
+#include "Game/Menu.cpp"
+#include "Game/Lobby.cpp"
+#include "Game/Playing.cpp"
+#include "Game/Result.cpp"
+#include "Game/Config.cpp"
+#include "Game/System.h"
