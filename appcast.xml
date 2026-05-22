@@ -9,7 +9,6 @@
             <sparkle:releaseNotesLink>https://github.com/Apopic/GUI-Tetris/releases/1.0.1</sparkle:releaseNotesLink>
             <sparkle:enclosure 
                 url="https://github.com/Apopic/GUI-Tetris/releases/download/1.0.1/Setup.msi" 
-                sparkle:version="1.0.1" 
                 type="application/octet-stream"
                 length="33824256" 
                 sparkle:edSignature="WcTFsTy+kY3YFxjT0gaNpnJi28vrySZrwVJL+Tm2TRMdtvrx+TVtCiiVciM08TUr4+2y7nAAlxQXoiupMFWoDQ==" 
