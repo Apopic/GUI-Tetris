@@ -6,11 +6,18 @@
         <description>最新のアップデート情報</description>
         <language>ja</language>
         <item>
-            <title>バージョン 1.0.0</title>
+            <title>バージョン 1.0.1</title>
             <sparkle:releaseNotesLink>https://Apopic.github.io/GUI-Tetris/release_notes.html</sparkle:releaseNotesLink>
             <pubDate>Fri, 22 May 2026 12:00:00 +0900</pubDate>
             <sparkle:minimumSystemVersion>10.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/Apopic/GUI-Tetris/releases/download/1.0.0/Setup.msi" sparkle:version="1.0.0" sparkle:shortVersionString="1.0.0" length="33824256" type="application/octet-stream" sparkle:edSignature="kkcjHIOiGg86oftuz4D/Moi4JPIZV/lJW5XNedA+bA08lFWdl5Swc7SK7OMqUa1Qlm3xpAD0z0gG4eAx1cCDw==" />
+            <enclosure 
+                url="https://github.com/Apopic/GUI-Tetris/releases/download/1.0.0/Setup.msi" 
+                sparkle:version="1.0.1" 
+                sparkle:shortVersionString="1.0.1" 
+                length="33824256" 
+                type="application/octet-stream" 
+                sparkle:edSignature="WcTFsTy+kY3YFxjT0gaNpnJi28vrySZrwVJL+Tm2TRMdtvrx+TVtCiiVciM08TUr4+2y7nAAlxQXoiupMFWoDQ==" 
+                />
         </item>
     </channel>
 </rss>
