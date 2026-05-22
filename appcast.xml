@@ -3,8 +3,8 @@
     <channel>
         <title>GUI-Tetris</title>
         <item>
-            <title>v1.0.1</title>
-            <sparkle:version>1.0.1</sparkle:version>
+            <title>v1.0.0</title>
+            <sparkle:version>1.0.0</sparkle:version>
             <sparkle:criticalUpdate />
             <sparkle:releaseNotesLink>https://apopic.github.io/GUI-Tetris/release_notes.html</sparkle:releaseNotesLink>
             <sparkle:enclosure 
