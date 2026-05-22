@@ -6,7 +6,7 @@
             <title>v1.0.1</title>
             <sparkle:version>1.0.1</sparkle:version>
             <sparkle:criticalUpdate />
-            <sparkle:releaseNotesLink>https://github.com/Apopic/GUI-Tetris/releases/1.0.1</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://apopic.github.io/GUI-Tetris/release_notes.html</sparkle:releaseNotesLink>
             <sparkle:enclosure 
                 url="https://github.com/Apopic/GUI-Tetris/releases/download/1.0.1/Setup.msi" 
                 type="application/octet-stream"
