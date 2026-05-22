@@ -21,7 +21,7 @@ const enum struct InputType : int {
 
 enum struct ConfigMode : int{
 	Null = -1,
-	None = 3, 
+	None = 4, 
 	GameConfig = 5,
 	KeyConfig = 10
 };
@@ -72,7 +72,7 @@ public:
 	std::string Path = "config.ini";
 
 	std::vector<std::vector<std::string>> ConfigRole = {
-		{"Back", "GameConfig", "KeyConfig"},
+		{"Back", "GameConfig", "KeyConfig", "UpdateCheck"},
 		{"Back", "PlayerName", "UseGamePad", "ServerAddress", "ServerPort"},
 		{"Back", "MoveLeft", "MoveRight", "RotateLeft", "RotateRight", "SoftDrop", "HardDrop", "SwapHold", "GameReturn", "GameBack"}
 	};

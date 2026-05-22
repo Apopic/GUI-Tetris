@@ -76,6 +76,29 @@ public:
 
 	} Playing;
 
+	struct _Config {
+
+		struct __Config {
+			Pos2D<float> MenuPos = { 640,120 };
+			Pos2D<float> BoxInterval = { 0,200 };
+		} Config;
+
+		struct _Image {
+			GraphData BackGround;
+			GraphData MenuBox;
+		} Image;
+
+		struct _Font {
+			FontData Menu;
+		} Font;
+
+		struct _SE {
+			SoundData Target;
+			SoundData Select;
+		} SE;
+
+	} Config;
+
 	void Load(int width, int height) {
 
 		std::string SkinFilePath = "Skin";
@@ -88,6 +111,7 @@ public:
 
 		const json& Playingdata = data["Playing"];
 		const json& Menudata = data["Menu"];
+		const json& Configdata = data["Config"];
 
 #define ValLoad(base, type, keyname) base.type.keyname = base##data[#type].value(#keyname, base.type.keyname)
 #define DataLoad(base, type, keyname) base.type.keyname.Load(SkinDir, base##data[#type][#keyname])
@@ -150,6 +174,21 @@ public:
 		DataLoad(Playing, Font, ResultData);
 		DataLoad(Playing, Font, SystemStr);
 		DataLoad(Playing, Font, EnemyName);
+
+#pragma endregion
+
+#pragma region Config
+
+		ValLoad(Config, Config, MenuPos);
+		ValLoad(Config, Config, BoxInterval);
+
+		DataLoad(Config, Image, BackGround);
+		DataLoad(Config, Image, MenuBox);
+
+		DataLoad(Config, SE, Target);
+		DataLoad(Config, SE, Select);
+
+		DataLoad(Config, Font, Menu);
 
 #pragma endregion
 

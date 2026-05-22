@@ -1,18 +1,19 @@
 #pragma once
 #include "System.h"
+#include "winsparkle.h"
 
 void Game::DrawConfig() {
 
-	Skin.Menu.Image.BackGround.Draw();
+	Skin.Config.Image.BackGround.Draw();
 
 	std::string str;
 	std::vector<bool> is_target = std::vector<bool>((int)Config.Mode, false);
 
 	for (int i = 0; i < is_target.size(); i++) {
-		is_target[i] = Skin.Menu.Image.MenuBox.IsTarget({ 0, Skin.Menu.Config.BoxInterval.Y * (float)i + Current_Rot });
+		is_target[i] = Skin.Config.Image.MenuBox.IsTarget({ 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot });
 		if (Targeted) { continue; }
 		if (is_target[i]) {
-			Skin.Menu.SE.Target.Play();
+			Skin.Config.SE.Target.Play();
 			Targeted = true;
 		}
 	}
@@ -23,7 +24,7 @@ void Game::DrawConfig() {
 	for (int i = 0; i < is_target.size(); i++) {
 
 		SetDrawBright(200 + 55 * is_target[i], 200 + 55 * is_target[i], 200 + 55 * is_target[i]);
-		Skin.Menu.Image.MenuBox.Draw({ 0, Skin.Menu.Config.BoxInterval.Y * (float)i + Current_Rot });
+		Skin.Config.Image.MenuBox.Draw({ 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot });
 		SetDrawBright(255, 255, 255);
 
 		switch (Config.Mode) {
@@ -38,9 +39,9 @@ void Game::DrawConfig() {
 			break;
 		}
 
-		Skin.Menu.Font.Menu.Draw({
-			Skin.Menu.Config.MenuPos.X,
-			Skin.Menu.Config.MenuPos.Y + Skin.Menu.Config.BoxInterval.Y * (float)i + Current_Rot },
+		Skin.Config.Font.Menu.Draw({
+			Skin.Config.Config.MenuPos.X,
+			Skin.Config.Config.MenuPos.Y + Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot },
 			GetColor(255, 255, 255),
 			GetColor(0, 0, 0),
 			str);
@@ -64,9 +65,9 @@ void Game::DrawConfig() {
 			}
 		}
 
-		Skin.Menu.Font.Menu.Draw({
-			Skin.Menu.Config.MenuPos.X,
-			Skin.Menu.Config.MenuPos.Y + Skin.Menu.Config.BoxInterval.Y / 2.0f + Skin.Menu.Config.BoxInterval.Y * (float)i + Current_Rot },
+		Skin.Config.Font.Menu.Draw({
+			Skin.Config.Config.MenuPos.X,
+			Skin.Config.Config.MenuPos.Y + Skin.Config.Config.BoxInterval.Y / 2.0f + Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot },
 			GetColor(255, 255, 255),
 			GetColor(0, 0, 0),
 			str);
@@ -75,16 +76,16 @@ void Game::DrawConfig() {
 
 void Game::ProcConfig() {
 
-	float min = Skin.Menu.Config.BoxInterval.Y * ((int)Config.Mode - (int)ConfigMode::None);
+	float min = Skin.Config.Config.BoxInterval.Y * ((int)Config.Mode - (int)ConfigMode::None);
 	Current_Rot = Wheel.GetWheelRot(100.0f, -min, 0.0f);
 
 	for (int i = 0, j = (int)Config.Mode; i < j; i++) {
-		if (Skin.Menu.Image.MenuBox.IsClick(MOUSE_INPUT_LEFT, { 0, Skin.Menu.Config.BoxInterval.Y * (float)i + Current_Rot})) {
+		if (Skin.Config.Image.MenuBox.IsClick(MOUSE_INPUT_LEFT, { 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot})) {
 			
 			if (Clicked) { break; }
 			Clicked = true;
 			Targeted = false;
-			Skin.Menu.SE.Select.Play();
+			Skin.Config.SE.Select.Play();
 
 			ConfigMode Prev = Config.Mode;
 
@@ -98,6 +99,9 @@ void Game::ProcConfig() {
 					break;
 				case 2:
 					Config.Mode = ConfigMode::KeyConfig;
+					break;
+				case 3:
+					win_sparkle_check_update_with_ui();
 					break;
 				}
 			}
@@ -116,7 +120,7 @@ void Game::ProcConfig() {
 					SetDrawBlendMode(0, 0);
 					SetKeyInputStringFont(Skin.Menu.Font.Menu.Handle);
 					Config.InputString(Config.myIni["General"][Config.ConfigRole[1][i]]);		
-					Skin.Menu.SE.Select.Play();
+					Skin.Config.SE.Select.Play();
 					break;
 				}
 			}
@@ -132,7 +136,7 @@ void Game::ProcConfig() {
 					SetDrawBlendMode(0, 0);
 					if (!Config.UseGamePad) { Config.InputKey(Config.myIni["KeyConfig"][Config.ConfigRole[2][i]]); }
 					else { Config.InputPad(Config.myIni["PadConfig"][Config.ConfigRole[2][i]]); }
-					Skin.Menu.SE.Select.Play();
+					Skin.Config.SE.Select.Play();
 					break;
 				}
 			}
