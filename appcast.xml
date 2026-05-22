@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:sparkle="http://andymatuschak.org" xmlns:dc="http://purl.org">
     <channel>
         <title>GUI-Tetris</title>
-        <link>https://Apopoc.github.io/GUI-Tetris/appcast.xml</link>
+        <link>https://Apopic.github.io/GUI-Tetris/appcast.xml</link>
         <description>最新のアップデート情報</description>
         <language>ja</language>
         <item>
