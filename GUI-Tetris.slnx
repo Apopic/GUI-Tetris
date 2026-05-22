@@ -4,7 +4,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="../Package/Package.wixproj" Type="b7dd6f7e-def8-4e67-b5b7-07ef123db6f0" Id="08f5c08c-9cd5-47e4-903c-e3a4e6d9116a" />
+  <Project Path="../Setup/Setup.vdproj" Type="Installer">
+    <Build />
+  </Project>
   <Project Path="GUI-Tetris.vcxproj" Id="11baf6f2-89f2-4ff0-8a8c-29810bcd3dcf">
     <Platform Solution="*|ARM64" Project="x64" />
   </Project>

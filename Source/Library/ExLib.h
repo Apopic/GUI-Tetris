@@ -163,6 +163,7 @@ struct GraphData {
 		if (Alpha != 256) { SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255); }
 	}
 	bool IsTarget(Pos2D<float> pos = { 0,0 }) {
+		if (!GetWindowActiveFlag()) { return false; }
 		Pos2D<int> mousepos;
 		GetMousePoint(&mousepos.X, &mousepos.Y);
 		return (Pos.X + pos.X - (Size.Width * 0.5f)) <= mousepos.X &&
@@ -171,6 +172,7 @@ struct GraphData {
 			(Pos.Y + pos.Y + (Size.Height * 0.5f)) >= mousepos.Y;
 	}
 	bool IsClick(int clicktype, Pos2D<float> pos = {0,0}) {
+		if (!GetWindowActiveFlag()) { return false; }
 		Pos2D<int> clickpos;
 		GetMousePoint(&clickpos.X, &clickpos.Y);
 		if ((GetMouseInput() & clicktype) != 0) {
