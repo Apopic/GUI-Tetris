@@ -10,7 +10,7 @@
             <sparkle:releaseNotesLink>https://Apopic.github.io/GUI-Tetris/release_notes.html</sparkle:releaseNotesLink>
             <pubDate>Fri, 22 May 2026 12:00:00 +0900</pubDate>
             <sparkle:minimumSystemVersion>10.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/Apopic/GUI-Tetris/releases/download/v1.0.0/Setup.msi" sparkle:version="1.0.0" sparkle:shortVersionString="1.0.0" length="32768" type="application/octet-stream" sparkle:edSignature="4wryeiwDXGBeB7UDu2eQ7qe3vpjD/kthI38+YDvMIFO/bs1+xB9q6/ygj/snoPHKuZtop6+RmdUzwqgXQiwhAA==" />
+            <enclosure url="https://github.com/Apopic/GUI-Tetris/releases/download/v1.0.0/Setup.msi" sparkle:version="1.0.0" sparkle:shortVersionString="1.0.0" length="123456789" type="application/octet-stream" sparkle:edSignature="Key" />
         </item>
     </channel>
 </rss>
