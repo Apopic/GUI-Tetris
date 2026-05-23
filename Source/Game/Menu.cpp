@@ -8,7 +8,8 @@ inline void Game::DrawMenu() {
 	std::vector<bool> is_target = std::vector<bool>(3, false);
 	
 	for (int i = 0; i < 3; i++) {
-		is_target[i] = Skin.Menu.Image.MenuBox.IsTarget({ 0, Skin.Menu.Config.BoxInterval.Y * (float)i });
+		bool target = Skin.Menu.Image.MenuBox.IsTarget({ 0, Skin.Menu.Config.BoxInterval.Y * (float)i });
+		is_target[i] = target || SelectIndex == i;
 		if (Targeted) { continue; }
 		if (is_target[i]) {
 			Skin.Menu.SE.Target.Play();
@@ -52,18 +53,36 @@ inline void Game::DrawMenu() {
 
 inline void Game::ProcMenu() {
 
+	bool is_up = CheckKey(InputType::GameUpKey);
+	bool is_down = CheckKey(InputType::GameDownKey);
+	int dir = is_down - is_up;
+
+	if (is_up || is_down) {
+		int prev = SelectIndex;
+		SelectIndex = std::clamp(SelectIndex + dir, 0, 2);
+		if (prev != SelectIndex) {
+			Targeted = false;
+		}
+	}
+
 	for (int i = 0; i < 3; i++) {
-		if (Skin.Menu.Image.MenuBox.IsClick(MOUSE_INPUT_LEFT, { 0, Skin.Menu.Config.BoxInterval.Y * (float)i })) {
-			if (Clicked) { break; }
-			Clicked = true;
+		
+		bool click = Skin.Menu.Image.MenuBox.IsClick(MOUSE_INPUT_LEFT, { 0, Skin.Menu.Config.BoxInterval.Y * (float)i });
+		bool is_return = CheckKey(InputType::GameReturn);
+
+		if (click || is_return) {
+			if (Selected) { break; }
+			if (!click && is_return) { i = SelectIndex; }
+			Selected = true;
 			Targeted = false;
 			Skin.Menu.SE.Select.Play();
+
 			switch (i) {
 			case 0:
-				NowScene = Scene::Playing;
-				Init();
+				NowScene = Scene::Lobby;
 				break;
 			case 1:
+				MultiPlay = true;
 				NowScene = Scene::Lobby;
 				break;
 			case 2:
@@ -74,7 +93,7 @@ inline void Game::ProcMenu() {
 			break;
 		}
 		else if (i == 2) {
-			Clicked = false;
+			Selected = false;
 		}
 	}
 }

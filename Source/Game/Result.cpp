@@ -10,7 +10,7 @@ inline void Game::DrawResultData() {
 		Skin.Playing.Font.ResultData.Draw(Skin.Playing.Config.ResultPos.GetPos<float>(3), GetColor(255, 255, 255), GetColor(0, 0, 0), rformat("Line:  {}", Line));
 		Skin.Playing.Font.ResultData.Draw(Skin.Playing.Config.ResultPos.GetPos<float>(4), GetColor(255, 255, 255), GetColor(0, 0, 0), rformat("Combo: {}", Combo));
 		Skin.Playing.Font.ResultData.Draw(Skin.Playing.Config.ResultPos.GetPos<float>(5), GetColor(255, 255, 255), GetColor(0, 0, 0), rformat("B2B:   {}", B2B));
-		Skin.Playing.Font.ResultData.Draw(Skin.Playing.Config.ResultPos.GetPos<float>(6), GetColor(255, 255, 255), GetColor(0, 0, 0), "Press \"GameReturn\" Key to Retry\n   \"GameBack\" Key to GameEnd");
+		Skin.Playing.Font.ResultData.Draw(Skin.Playing.Config.ResultPos.GetPos<float>(6), GetColor(255, 255, 255), GetColor(0, 0, 0), "Press \"GameReturn\" to Retry\n   \"GameBack\" to Lobby");
 	}
 	else {
 		for (auto data : ShareData.PlayerDatas) {
@@ -26,7 +26,7 @@ inline void Game::DrawResultData() {
 			Skin.Playing.Config.ResultPos.GetPos<float>(4),
 			GetColor(255, 255, 255),
 			GetColor(0, 0, 0),
-			"Press \"GameBack\" Key Return to Lobby."
+			"Press \"GameBack\" to Lobby."
 		);
 	}
 }
@@ -63,7 +63,7 @@ inline void Game::ProcResult() {
 		}
 		if (CheckKey(InputType::GameBack)) {
 			Skin.Playing.Image.FadeBG.Alpha = 0;
-			NowScene = Scene::Menu;
+			NowScene = Scene::Lobby;
 		}
 	}
 	else {

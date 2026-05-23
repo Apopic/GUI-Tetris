@@ -32,6 +32,31 @@ public:
 
 	} Menu;
 
+	struct _Lobby {
+
+		struct _Config {
+			Pos2D<float> MenuPos = { 640,160 };
+			Pos2D<float> BoxInterval = { 0,240 };
+		} Config;
+
+		struct _Image {
+			GraphData BackGround;
+			GraphData MenuBox;
+		} Image;
+
+		struct _Font {
+			FontData Menu;
+		} Font;
+
+		struct _SE {
+			SoundData Target;
+			SoundData Select;
+		} SE;
+
+		struct _BGM {} BGM;
+
+	} Lobby;
+
 	struct _Playing {
 
 		struct _Config {
@@ -99,7 +124,7 @@ public:
 
 	} Config;
 
-	void Load(int width, int height) {
+	void Load() {
 
 		std::string SkinFilePath = "Skin";
 
@@ -109,8 +134,9 @@ public:
 
 		std::string SkinDir = SkinFilePath + "/";
 
-		const json& Playingdata = data["Playing"];
 		const json& Menudata = data["Menu"];
+		const json& Lobbydata = data["Lobby"];
+		const json& Playingdata = data["Playing"];
 		const json& Configdata = data["Config"];
 
 #define ValLoad(base, type, keyname) base.type.keyname = base##data[#type].value(#keyname, base.type.keyname)
@@ -128,6 +154,21 @@ public:
 		DataLoad(Menu, SE, Select);
 
 		DataLoad(Menu, Font, Menu);
+
+#pragma endregion
+
+#pragma region Lobby
+
+		ValLoad(Lobby, Config, MenuPos);
+		ValLoad(Lobby, Config, BoxInterval);
+
+		DataLoad(Lobby, Image, BackGround);
+		DataLoad(Lobby, Image, MenuBox);
+
+		DataLoad(Lobby, SE, Target);
+		DataLoad(Lobby, SE, Select);
+
+		DataLoad(Lobby, Font, Menu);
 
 #pragma endregion
 
@@ -149,12 +190,6 @@ public:
 		DataLoad(Playing, Image, EnemyFrame);
 		DataLoad(Playing, Image, HoldFrame);
 		DataLoad(Playing, Image, QueueFrame);
-
-		Size2D<float> ResizeRate{ width / 10.0, (height - 4) / 20.0 };
-		Playing.Image.MainFrame.Size.Width *= ResizeRate.Width;
-		Playing.Image.MainFrame.Size.Height *= ResizeRate.Height;
-		Playing.Image.EnemyFrame.Size.Width *= ResizeRate.Width;
-		Playing.Image.EnemyFrame.Size.Height *= ResizeRate.Height;
 
 		DataLoad(Playing, SE, Rotate);
 		DataLoad(Playing, SE, HardDrop);

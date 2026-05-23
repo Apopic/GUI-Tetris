@@ -10,7 +10,8 @@ void Game::DrawConfig() {
 	std::vector<bool> is_target = std::vector<bool>((int)Config.Mode, false);
 
 	for (int i = 0; i < is_target.size(); i++) {
-		is_target[i] = Skin.Config.Image.MenuBox.IsTarget({ 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot });
+		bool target = Skin.Config.Image.MenuBox.IsTarget({ 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Scroll });
+		is_target[i] = target || i == SelectIndex;
 		if (Targeted) { continue; }
 		if (is_target[i]) {
 			Skin.Config.SE.Target.Play();
@@ -24,24 +25,24 @@ void Game::DrawConfig() {
 	for (int i = 0; i < is_target.size(); i++) {
 
 		SetDrawBright(200 + 55 * is_target[i], 200 + 55 * is_target[i], 200 + 55 * is_target[i]);
-		Skin.Config.Image.MenuBox.Draw({ 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot });
+		Skin.Config.Image.MenuBox.Draw({ 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Scroll });
 		SetDrawBright(255, 255, 255);
 
 		switch (Config.Mode) {
 		case ConfigMode::None:
-			str = Config.ConfigRole[0][i];
+			str = Config.Menu[0][i];
 			break;
 		case ConfigMode::GameConfig:
-			str = Config.ConfigRole[1][i];
+			str = Config.Menu[1][i];
 			break;
 		case ConfigMode::KeyConfig:
-			str = Config.ConfigRole[2][i];
+			str = Config.Menu[2][i];
 			break;
 		}
 
 		Skin.Config.Font.Menu.Draw({
 			Skin.Config.Config.MenuPos.X,
-			Skin.Config.Config.MenuPos.Y + Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot },
+			Skin.Config.Config.MenuPos.Y + Skin.Config.Config.BoxInterval.Y * (float)i + Current_Scroll },
 			GetColor(255, 255, 255),
 			GetColor(0, 0, 0),
 			str);
@@ -50,24 +51,24 @@ void Game::DrawConfig() {
 		if (i == 0) { continue; }
 		if (!is_target[i]) { continue; }
 		if (Config.Mode == ConfigMode::GameConfig) {
-			str = Config.myIni["General"][Config.ConfigRole[1][i]].as<std::string>();
+			str = Config.myIni["General"][Config.Menu[1][i]].as<std::string>();
 		}
 		if (Config.Mode == ConfigMode::KeyConfig) {
 			if (!Config.UseGamePad) {
 				char keyname[256];
-				int keycode = Config.myIni["KeyConfig"][Config.ConfigRole[2][i]].as<int>();
+				int keycode = Config.myIni["KeyConfig"][Config.Menu[2][i]].as<int>();
 				UINT scancode = MapVirtualKey(keycode, MAPVK_VK_TO_VSC);
 				GetKeyNameText(scancode << 16, keyname, sizeof(keyname));
 				str = keyname;
 			}
 			else {
-				str = Config.PadInputName[Config.myIni["PadConfig"][Config.ConfigRole[2][i]].as<int>()];
+				str = Config.PadInputName[Config.myIni["PadConfig"][Config.Menu[2][i]].as<int>()];
 			}
 		}
 
 		Skin.Config.Font.Menu.Draw({
 			Skin.Config.Config.MenuPos.X,
-			Skin.Config.Config.MenuPos.Y + Skin.Config.Config.BoxInterval.Y / 2.0f + Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot },
+			Skin.Config.Config.MenuPos.Y + Skin.Config.Config.BoxInterval.Y / 2.0f + Skin.Config.Config.BoxInterval.Y * (float)i + Current_Scroll },
 			GetColor(255, 255, 255),
 			GetColor(0, 0, 0),
 			str);
@@ -77,13 +78,31 @@ void Game::DrawConfig() {
 void Game::ProcConfig() {
 
 	float min = Skin.Config.Config.BoxInterval.Y * ((int)Config.Mode - (int)ConfigMode::None);
-	Current_Rot = Wheel.GetWheelRot(100.0f, -min, 0.0f);
+	float addscr = GetMouseWheelRotVolF() * 100.0f;
+	
+	bool is_up = CheckKey(InputType::GameUpKey);
+	bool is_down = CheckKey(InputType::GameDownKey);
+	int dir = is_down - is_up;
 
-	for (int i = 0, j = (int)Config.Mode; i < j; i++) {
-		if (Skin.Config.Image.MenuBox.IsClick(MOUSE_INPUT_LEFT, { 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Rot})) {
-			
-			if (Clicked) { break; }
-			Clicked = true;
+	if (is_up || is_down) {
+		addscr = 100.0f * (float)-dir;
+		int prev = SelectIndex;
+		SelectIndex = std::clamp(SelectIndex + dir, 0, (int)Config.Mode - 1);
+		if (prev != SelectIndex) {
+			Targeted = false;
+		}
+	}
+	Current_Scroll = Screen.GetScrollPos(addscr, -min, 0.0f);
+
+	for (int i = 0; i < (int)Config.Mode; i++) {
+		
+		bool click = Skin.Config.Image.MenuBox.IsClick(MOUSE_INPUT_LEFT, { 0, Skin.Config.Config.BoxInterval.Y * (float)i + Current_Scroll});
+		bool is_return = CheckKey(InputType::GameReturn);
+
+		if (click || is_return) {
+			if (Selected) { break; }
+			if (!click && is_return) { i = SelectIndex; }
+			Selected = true;
 			Targeted = false;
 			Skin.Config.SE.Select.Play();
 
@@ -111,16 +130,16 @@ void Game::ProcConfig() {
 					Config.Mode = ConfigMode::None;
 					break;
 				case 2:
-					Config.InputBool(Config.myIni["General"][Config.ConfigRole[1][2]]);
+					InputBool(Config.myIni["General"][Config.Menu[1][2]]);
+					break;
+				case 4:
+					InputInt(Config.myIni["General"][Config.Menu[1][i]], 5, 0, 65535);
+					break;
+				case 5:
+					InputDouble(Config.myIni["General"][Config.Menu[1][i]], 9, 0.0, 1.0);
 					break;
 				default:
-					SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
-					DrawConfig();
-					ScreenFlip();
-					SetDrawBlendMode(0, 0);
-					SetKeyInputStringFont(Skin.Menu.Font.Menu.Handle);
-					Config.InputString(Config.myIni["General"][Config.ConfigRole[1][i]]);		
-					Skin.Config.SE.Select.Play();
+					InputString(Config.myIni["General"][Config.Menu[1][i]]);
 					break;
 				}
 			}
@@ -130,26 +149,28 @@ void Game::ProcConfig() {
 					Config.Mode = ConfigMode::None;
 					break;
 				default:
-					SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
-					DrawConfig();
-					ScreenFlip();
-					SetDrawBlendMode(0, 0);
-					if (!Config.UseGamePad) { Config.InputKey(Config.myIni["KeyConfig"][Config.ConfigRole[2][i]]); }
-					else { Config.InputPad(Config.myIni["PadConfig"][Config.ConfigRole[2][i]]); }
-					Skin.Config.SE.Select.Play();
+					if (!Config.UseGamePad) {
+						InputKey(Config.myIni["KeyConfig"][Config.Menu[2][i]]);
+					}
+					else {
+						InputPad(Config.myIni["PadConfig"][Config.Menu[2][i]]);				
+					}
 					break;
 				}
 			}
 
 			if (Prev != Config.Mode) {
-				Current_Rot = 0;
-				Wheel.ResetWheelRot();
+				Current_Scroll = 0.0f;
+				Screen.ResetScrollPos();
+				SelectIndex = -1;
 			}
+
+			Skin.Config.SE.Select.Play();
 
 			break;
 		}
 		else if (i == ((int)Config.Mode - 1)) {
-			Clicked = false;
+			Selected = false;
 		}
 	}
 }

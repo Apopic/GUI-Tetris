@@ -466,7 +466,7 @@ inline void Game::ProcPlaying() {
 			Next();
 			IsBoardChange = true;
 		}
-		if (GravityTimer.GetElapsed().Second() > GravityTime * (CheckKey(InputType::SoftDrop, 1) ? SoftDropRate : 1)) {
+		if (GravityTimer.GetElapsed().Second() > GravityTime * (CheckKey(InputType::SoftDrop, 1) ? Config.SoftDropRate : 1)) {
 			GravityTimer.Start();
 			CurrentSoftDrop();
 			IsBoardChange = true;
@@ -532,10 +532,6 @@ inline void Game::ProcPlaying() {
 			ShareData.Attack = Attack;
 			Send();
 			Attack = 0;
-		}
-		if (!GameInitFlag) {
-			GameInitFlag = true;
-			Init();
 		}
 		if (EndFlag && !CheckState()) {
 			SwitchState(true);

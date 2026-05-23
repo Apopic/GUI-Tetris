@@ -14,6 +14,8 @@ const enum struct InputType : int {
 	SoftDrop,
 	HardDrop,
 	SwapHold,
+	GameUpKey,
+	GameDownKey,
 	GameReturn,
 	GameBack,
 	Count
@@ -22,7 +24,7 @@ const enum struct InputType : int {
 enum struct ConfigMode : int{
 	Null = -1,
 	None = 4, 
-	GameConfig = 5,
+	GameConfig = 6,
 	KeyConfig = 10
 };
 
@@ -65,16 +67,18 @@ public:
 		"SoftDrop",
 		"HardDrop",
 		"SwapHold",
+		"GameUpKey",
+		"GameDownKey",
 		"GameReturn",
 		"GameBack"
 	};
 
 	std::string Path = "config.ini";
 
-	std::vector<std::vector<std::string>> ConfigRole = {
+	std::vector<std::vector<std::string>> Menu = {
 		{"Back", "GameConfig", "KeyConfig", "UpdateCheck"},
-		{"Back", "PlayerName", "UseGamePad", "ServerAddress", "ServerPort"},
-		{"Back", "MoveLeft", "MoveRight", "RotateLeft", "RotateRight", "SoftDrop", "HardDrop", "SwapHold", "GameReturn", "GameBack"}
+		{"Back", "PlayerName", "UseGamePad", "ServerAddress", "ServerPort", "SoftDropRate"},
+		{"Back", "MoveLeft", "MoveRight", "RotateLeft", "RotateRight", "SoftDrop", "HardDrop", "SwapHold", "GameUpKey", "GameDownKey", "GameReturn", "GameBack"}
 	};
 	std::vector<std::string> KeyRole = { "KeyConfig", "PadConfig" };
 
@@ -82,6 +86,7 @@ public:
 
 	std::string PlayerName = "NoName";
 	bool UseGamePad = false;
+	double SoftDropRate = 0.03125;
 
 	int Width = 10;
 	int Height = 20;
@@ -91,9 +96,10 @@ public:
 	std::string ServerAddress = "localhost";
 	uint16_t ServerPort = 8080;
 
-	int Keys[(int)InputType::Count] = { 65, 68, 74, 76, 83, 32, 160, 13, 8 };
+	int Keys[(int)InputType::Count] = { 65, 68, 74, 76, 83, 32, 160, 38, 40, 13, 8 };
 
 	ini::IniFile myIni;
+	ini::IniFile PrevIni;
 
 	bool Load() {
 
@@ -108,6 +114,7 @@ public:
 		UseGamePad = myIni["General"]["UseGamePad"].as<bool>();
 		ServerAddress = myIni["General"]["ServerAddress"].as<std::string>();
 		ServerPort = myIni["General"]["ServerPort"].as<uint16_t>();
+		SoftDropRate = myIni["General"]["SoftDropRate"].as<double>();
 
 		Width = myIni["GameRule"]["Width"].as<int>();
 		Height = myIni["GameRule"]["Height"].as<int>() + 4;
@@ -126,46 +133,5 @@ public:
 		}
 
 		return true;
-	}
-
-	void Save() {
-		myIni.save(Path);
-		Load();
-	}
-
-	template<class T>
-	void InputString(T& data) {
-		char inputstr[256];
-		KeyInputString(64, 64, 256, inputstr, FALSE);
-		std::string str(inputstr);
-		data = str.empty() ? data : str;
-		Save();
-	}
-	template<class T>
-	void InputBool(T& data) {
-		data = !data.as<bool>();
-		Save();
-	}
-	template<class T>
-	void InputKey(T& data) {
-		WaitKey();
-		for (int i = 0; i < 256; i++) {
-			if (GetAsyncKeyState(i) & 0x8000) {
-				data = i;
-				break;
-			}
-		}
-		Save();
-	}
-	template<class T>
-	void InputPad(T& data) {
-		WaitKey();
-		for (int i = 0; i < 11; i++) {
-			if (GetJoypadInputState(DX_INPUT_PAD1) & PadInputList[i]) {
-				data = i;
-				break;
-			}
-		}
-		Save();
 	}
 };

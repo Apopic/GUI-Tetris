@@ -148,6 +148,18 @@ struct GraphData {
 		);
 		if (Alpha != 256) { SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255); }
 	}
+	void ResizeDraw(Pos2D<float> pos = { 0,0 }, Size2D<float> size = {1.0f, 1.0f}) {
+		if (Alpha != 256) { SetDrawBlendMode(DX_BLENDMODE_ALPHA, Alpha); }
+		DrawExtendGraphF(
+			Pos.X + pos.X - (Size.Width * 0.5f * size.Width),
+			Pos.Y + pos.Y - (Size.Height * 0.5f * size.Height),
+			Pos.X + pos.X + (Size.Width * 0.5f * size.Width),
+			Pos.Y + pos.Y + (Size.Height * 0.5f * size.Height),
+			Handle,
+			TRUE
+		);
+		if (Alpha != 256) { SetDrawBlendMode(DX_BLENDMODE_ALPHA, 255); }
+	}
 	void RectDraw(Pos2D<float> pos, Pos2D<float> orgpos, Size2D<float> size) {
 		if (Alpha != 256) { SetDrawBlendMode(DX_BLENDMODE_ALPHA, Alpha); }
 		DrawRectGraphF(

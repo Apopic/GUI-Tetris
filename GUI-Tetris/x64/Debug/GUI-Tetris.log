@@ -1,0 +1,503 @@
+﻿  Main.cpp
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Cryptgraphy\AES128.h(376,21): warning C4018: '>': signed と unsigned の数値を比較しようとしました。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(147,80): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(158,82): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(161,113): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(79,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(140,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(152,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(164,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(231,116): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(231,55): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(231,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(254,116): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(254,55): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(254,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(290,39): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(293,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(345,43): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(359,46): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(360,26): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(373,43): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:         ]
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\Escape.h(15,2): warning C4369: 'RGBColor': 列挙値 '2147483648' は 'int' として表示できません。値は '2147483648' です
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\Playing.cpp(176,12): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(376,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+      C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(376,17):
+      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+          C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(52,11):
+          コンパイル対象の関数 テンプレート インスタンス化 'void Packet::StoreBytes<std::string>(Packet::bytearray &,const T &)' のリファレンスを確認してください
+          with
+          [
+              T=std::string
+          ]
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(378,40): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(328,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+      C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(328,17):
+      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+          C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(82,12):
+          コンパイル対象の関数 テンプレート インスタンス化 'void Packet::StoreBytes<Myno>(Packet::bytearray &,const std::vector<Myno,std::allocator<Myno>> &)' のリファレンスを確認してください
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(354,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+      C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(354,17):
+      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+          C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(84,11):
+          コンパイル対象の関数 テンプレート インスタンス化 'void Packet::StoreBytes<PlayerData>(Packet::bytearray &,const std::vector<PlayerData,std::allocator<PlayerData>> &)' のリファレンスを確認してください
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(358,43): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Main.cpp' をコンパイルしています)
+  
+  Config.cpp
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Cryptgraphy\AES128.h(376,21): warning C4018: '>': signed と unsigned の数値を比較しようとしました。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(147,80): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(158,82): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(161,113): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(79,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(140,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(152,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(164,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(171,8): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(170,8): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(169,10): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(168,10): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(231,116): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(231,55): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(231,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(254,116): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(254,55): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(254,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(290,39): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(293,60): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(296,10): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244: '引数': 'T' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(295,10): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(345,43): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(359,46): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(360,26): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\ExLib.h(373,43): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,42): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(351,70): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(354,14): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(355,14): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(385,15): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(386,15): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,46): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838: 'double' から 'T' への変換には縮小変換が必要です
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4838:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244: '初期化中': 'double' から 'T' への変換です。データが失われる可能性があります。
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:         with
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:         [
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:             T=float
+C:\Users\yuziz\GUI-Tetris\Source\Game\System.h(389,77): warning C4244:         ]
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(376,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+      C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(376,17):
+      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+          C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(52,11):
+          コンパイル対象の関数 テンプレート インスタンス化 'void Packet::StoreBytes<std::string>(Packet::bytearray &,const T &)' のリファレンスを確認してください
+          with
+          [
+              T=std::string
+          ]
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(378,40): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(328,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+      C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(328,17):
+      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+          C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(82,12):
+          コンパイル対象の関数 テンプレート インスタンス化 'void Packet::StoreBytes<Myno>(Packet::bytearray &,const std::vector<Myno,std::allocator<Myno>> &)' のリファレンスを確認してください
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(354,17): warning C4267: '初期化中': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+      C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(354,17):
+      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
+          C:\Users\yuziz\GUI-Tetris\Source\Game\Multi.h(84,11):
+          コンパイル対象の関数 テンプレート インスタンス化 'void Packet::StoreBytes<PlayerData>(Packet::bytearray &,const std::vector<PlayerData,std::allocator<PlayerData>> &)' のリファレンスを確認してください
+  
+C:\Users\yuziz\GUI-Tetris\Source\Library\Socket\Packet.h(358,43): warning C4267: '引数': 'size_t' から 'uint32_t' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Source/Game/Config.cpp' をコンパイルしています)
+  
+  コードを生成中...
+C:\Users\yuziz\GUI-Tetris\Source\Game\Playing.cpp(283,1): warning C4715: '`Game::TableIndexConverter'::`2'::<lambda_1>::operator()': 値を返さないコントロール パスがあります。
+  GUI-Tetris.vcxproj -> C:\Users\yuziz\GUI-Tetris\x64\Debug\GUI-Tetris.exe
+  'pwsh.exe' は、内部コマンドまたは外部コマンド、
+  操作可能なプログラムまたはバッチ ファイルとして認識されていません。

@@ -9,6 +9,7 @@
 #include "Multi.h"
 #include "Skin.h"
 #include "Config.h"
+#include "Lobby.h"
 #include "../Library/Input.h"
 #include "../Library/timer.hpp"
 
@@ -257,6 +258,7 @@ class Game {
 
 	_Skin Skin;
 	_Config Config;
+	_Lobby Lobby;
 
 	TCPSocket Socket;
 	std::vector<std::vector<std::vector<Myno>>> Boards;
@@ -264,17 +266,18 @@ class Game {
 
 	Scene NowScene = Scene::Init;
 
-	MouseWheel Wheel = MouseWheel();
+	ScreenInput Screen = ScreenInput();
 
-	float Current_Rot = 0.0f;
+	int SelectIndex = -1;
+	float Current_Scroll = 0.0f;
 	bool Targeted = false;
-	bool Clicked = false;
+	bool Selected = false;
 
 	bool EndFlag = false;
 	bool GameEnd = false;
 
 	bool MultiPlay = false;
-	bool GameInitFlag = false;
+	bool ServerConnected = false;
 
 	uint64_t Score = 0;
 	uint64_t Line = 0;
@@ -295,7 +298,6 @@ class Game {
 	int LockCount = 0;
 	libarrier::Timer GravityTimer;
 	double GravityTime = 1;
-	double SoftDropRate = 0.03125;
 	char MoveState = '\0';
 	libarrier::Timer MoveTimer;
 	double MoveTime = 0.15;
@@ -346,7 +348,8 @@ class Game {
 
 	void DrawBoard() {
 		SetDrawBright(255, 255, 255);
-		Skin.Playing.Image.MainFrame.Draw();
+		Size2D<float> ResizeRate{ Config.Width / 10.0, (Config.Height - 4) / 20.0 };
+		Skin.Playing.Image.MainFrame.ResizeDraw({ 0,0 }, ResizeRate);
 		Pos2D<float> offset = {
 			std::round(Skin.Playing.Image.MainMyno.Size.Width * (10 - Config.Width) * 0.5),
 			std::round(Skin.Playing.Image.MainMyno.Size.Height * (20 - (Config.Height - 4)) * 0.5)
@@ -379,10 +382,12 @@ class Game {
 
 			SetDrawBright(255, 255, 255);
 			Pos2D<float> offset = {
-				std::round(Skin.Playing.Image.EnemyMyno.Size.Width * (10 - Config.Width) * 0.5 + (Skin.Playing.Config.EnemyFrameInterval.X * l)),
-				std::round(Skin.Playing.Image.EnemyMyno.Size.Height * (20 - (Config.Height - 4)) * 0.5 + (Skin.Playing.Config.EnemyFrameInterval.Y * (j % 4)))
+				std::round(Skin.Playing.Image.EnemyMyno.Size.Width * (10 - ShareData.Rule.Width) * 0.5 + (Skin.Playing.Config.EnemyFrameInterval.X * l)),
+				std::round(Skin.Playing.Image.EnemyMyno.Size.Height * (20 - (ShareData.Rule.Height - 4)) * 0.5 + (Skin.Playing.Config.EnemyFrameInterval.Y * (j % 4)))
 			};
-			Skin.Playing.Image.EnemyFrame.Draw({ Skin.Playing.Config.EnemyFrameInterval.X * l, Skin.Playing.Config.EnemyFrameInterval.Y * (j % 4) });
+
+			Size2D<float> ResizeRate{ ShareData.Rule.Width / 10.0, (ShareData.Rule.Height - 4) / 20.0 };
+			Skin.Playing.Image.EnemyFrame.ResizeDraw({ Skin.Playing.Config.EnemyFrameInterval.X * l, Skin.Playing.Config.EnemyFrameInterval.Y * (j % 4)}, ResizeRate);
 
 			auto& board = boards[i];
 
@@ -542,8 +547,10 @@ class Game {
 	inline void DrawConfig();
 
 	void Init() {
-		Config.Load();
-		Skin.Load(Config.Width, Config.Height);
+		if (MultiPlay) {
+			ShareData.Attack = 0;
+			ShareData.Damage = 0;
+		}
 		Boards.clear();
 		QueueClear(BGMQueue);
 		QueueClear(BagQueue);
@@ -586,7 +593,122 @@ class Game {
 	inline void Send();
 	inline bool Recv();
 	inline bool CheckState();
-	inline void SwitchState(bool val);
+	inline void SwitchState(short val);
+
+	void ResetGameRule() {
+
+		Config.myIni["GameRule"]["Width"] = Lobby.Width;
+		Config.myIni["GameRule"]["Height"] = Lobby.Height;
+		Config.myIni["GameRule"]["NextCount"] = Lobby.NextCount;
+		Config.myIni["GameRule"]["GravitySpeedRate"] = Lobby.GravitySpeedRate;
+
+		Config.myIni.save(Config.Path);
+		Config.Load();
+
+	}
+
+	void SendGameRule() {
+
+		ShareData.Rule.Width = Config.myIni["GameRule"]["Width"].as<int>();
+		ShareData.Rule.Height = Config.myIni["GameRule"]["Height"].as<int>();
+		ShareData.Rule.NextCount = Config.myIni["GameRule"]["NextCount"].as<int>();
+		ShareData.Rule.GravitySpeedRate = Config.myIni["GameRule"]["GravitySpeedRate"].as<double>();
+
+		Send();
+	}
+
+	void RecvGameRule() {
+
+		Config.myIni["GameRule"]["Width"] = ShareData.Rule.Width;
+		Config.myIni["GameRule"]["Height"] = ShareData.Rule.Height;
+		Config.myIni["GameRule"]["NextCount"] = ShareData.Rule.NextCount;
+		Config.myIni["GameRule"]["GravitySpeedRate"] = (double)ShareData.Rule.GravitySpeedRate;
+
+		Config.myIni.save(Config.Path);
+		Config.Load();
+	}
+
+	void InputInit() {
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
+		Draw(false);
+		SetDrawBlendMode(0, 0);
+	}
+
+	void InputEnd() {
+		Config.myIni.save(Config.Path);
+		Config.Load();
+	}
+
+	template<class T>
+	void InputString(T& data, size_t length = 256) {
+		InputInit();
+		SetKeyInputStringFont(Skin.Menu.Font.Menu.Handle);
+		char inputstr[256];
+		KeyInputString(64, 64, length, inputstr, FALSE);
+		std::string str(inputstr);
+		data = str.empty() ? data : str;
+		InputEnd();
+	}
+	template<class T>
+	void InputInt(T& data, size_t length = 256, int min = INT_MIN, int max = INT_MAX) {
+		InputInit();
+		SetKeyInputStringFont(Skin.Menu.Font.Menu.Handle);
+		char inputstr[256];
+		KeyInputString(64, 64, length, inputstr, FALSE);
+		std::string str(inputstr);
+		bool is_digit = !str.empty() && std::all_of(str.begin(), str.end(), [](unsigned char c) { return std::isdigit(c); });
+		data = !is_digit ? data : std::to_string(std::clamp(std::stoi(str), min, max));
+		InputEnd();
+	}
+	template<class T>
+	void InputDouble(T& data, size_t length = 256, double min = std::numeric_limits<double>::min(), double max = std::numeric_limits<double>::max()) {
+		InputInit();
+		SetKeyInputStringFont(Skin.Menu.Font.Menu.Handle);
+		char inputstr[256];
+		KeyInputString(64, 64, length, inputstr, FALSE);
+		std::string str(inputstr);
+		bool has_dot = false;
+		bool is_digit = !str.empty() && std::all_of(str.begin(), str.end(), [&](unsigned char c) { 
+			if (c == '.') {
+				if (has_dot) return false;
+				has_dot = true;
+				return true;
+			}
+			return (bool)std::isdigit(c);
+			});
+		data = !is_digit ? data : std::to_string(std::clamp(std::stod(str), min, max));
+		InputEnd();
+	}
+	template<class T>
+	void InputBool(T& data) {
+		InputInit();
+		data = !data.as<bool>();
+		InputEnd();
+	}
+	template<class T>
+	void InputKey(T& data) {
+		InputInit();
+		WaitKey();
+		for (int i = 0; i < 256; i++) {
+			if (GetAsyncKeyState(i) & 0x8000) {
+				data = i;
+				break;
+			}
+		}
+		InputEnd();
+	}
+	template<class T>
+	void InputPad(T& data) {
+		InputInit();
+		WaitKey();
+		for (int i = 0; i < 11; i++) {
+			if (GetJoypadInputState(DX_INPUT_PAD1) & Config.PadInputList[i]) {
+				data = i;
+				break;
+			}
+		}
+		InputEnd();
+	}
 
 public:
 
@@ -596,6 +718,12 @@ public:
 	bool IsUseGamePad() const {
 		return Config.UseGamePad;
 	}
+	void IsScreenClick() {
+		if (Screen.IsScreenClick(MOUSE_INPUT_LEFT)) {
+			SelectIndex = -1;
+		}
+	}
+
 	int GetPadKeyCode(int i) const {
 		return Config.Keys[i];
 	}
@@ -607,9 +735,11 @@ public:
 			++i;
 		}
 
-		if (MultiPlay) {
+		if (MultiPlay && ServerConnected) {
 			NowScene = ShareData.NowScene;
 		}
+
+		Scene prev = NowScene;
 
 		switch (NowScene) {
 		case Scene::Init:
@@ -631,9 +761,14 @@ public:
 			ProcConfig();
 			break;
 		}
+
+		if (prev != NowScene) {
+			Current_Scroll = 0.0f;
+			SelectIndex = -1;
+		}
 	}
 
-	void Draw() {
+	void Draw(bool clearscreen = true) {
 
 		switch (NowScene) {
 		case Scene::Init:
@@ -657,6 +792,8 @@ public:
 		}
 
 		ScreenFlip();
-		ClearDrawScreen();
+		if (clearscreen) {
+			ClearDrawScreen();
+		}
 	}
 };

@@ -12,6 +12,6 @@ inline bool Game::Recv() {
 inline bool Game::CheckState() {
 	return ShareData.PlayerDatas[ShareData.MyIndex].State > 0;
 }
-inline void Game::SwitchState(bool val) {
+inline void Game::SwitchState(short val) {
 	ShareData.PlayerDatas[ShareData.MyIndex].State = val;
 }

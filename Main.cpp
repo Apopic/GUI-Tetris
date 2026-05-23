@@ -53,6 +53,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			}
 		}
 
+		game.IsScreenClick();
+
 		if (game.IsGameEnd()) {
 			break;
 		}

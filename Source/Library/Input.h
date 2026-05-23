@@ -45,38 +45,50 @@ struct InputFlag {
 	State state = State::Release;
 };
 
-struct MouseWheel {
+struct ScreenInput {
 
-	float GetWheelRot(float sensitivity, float rotpos_min, float rotpos_max) {
-		float rot = 0.0f;
-		Get_Rot += GetMouseWheelRotVolF() * sensitivity;
-		if (Get_Rot != 0.0f && !WheelRotTimer.IsRunning()) {
-			WheelRotTimer.Start();
+	float GetScrollPos(float addscr, float scr_min, float scr_max) {
+		float scr = 0.0f;
+		Get_Scroll += addscr;
+		if (Get_Scroll != 0.0f && !IsScrolling()) {
+			ScrollTimer.Start();
 		}
-		if (WheelRotTimer.IsRunning()) {
-			double rate = ease::GetEasingRate(WheelRotTimer.GetElapsed().Second() / WheelRotTime, ease::Base::Out, ease::Line::Quint);
-			rot = std::clamp((float)(Current_Rot + Get_Rot * rate), rotpos_min, rotpos_max);
+		if (IsScrolling()) {
+			double rate = ease::GetEasingRate(ScrollTimer.GetElapsed().Second() / ScrollTime, ease::Base::Out, ease::Line::Cubic);
+			scr = std::clamp((float)(Current_Scroll + Get_Scroll * rate), scr_min, scr_max);
 			if (rate >= 1.0) {
-				Get_Rot = 0.0f;
-				Current_Rot = rot;
-				WheelRotTimer.Stop();
-				WheelRotTimer.Reset();
+				Get_Scroll = 0.0f;
+				Current_Scroll = scr;
+				ScrollTimer.Stop();
+				ScrollTimer.Reset();
 			}
-			return rot;
+			return scr;
 		}
-		return Current_Rot;
+		return Current_Scroll;
 	}
 
-	void ResetWheelRot() {
-		Get_Rot = 0;
-		Current_Rot = 0;
+	void SetScrollTimer(double time) {
+		ScrollTime = time;
+	}
+
+	bool IsScrolling() const {
+		return ScrollTimer.IsRunning();
+	}
+
+	void ResetScrollPos() {
+		Get_Scroll = 0;
+		Current_Scroll = 0;
+	}
+
+	bool IsScreenClick(int clicktype) const {
+		return (GetMouseInput() & clicktype);
 	}
 
 private:
 
-	libarrier::Timer WheelRotTimer;
-	double WheelRotTime = 0.25;
+	libarrier::Timer ScrollTimer;
+	double ScrollTime = 0.25;
 
-	float Get_Rot = 0.0f;
-	float Current_Rot = 0.0f;
+	float Get_Scroll = 0.0f;
+	float Current_Scroll = 0.0f;
 };

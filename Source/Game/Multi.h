@@ -45,25 +45,36 @@ enum struct Scene : int {
 struct PlayerData {
 	std::string PlayerName = "NoName";
 	short State = 0;
+	bool IsHost = false;
 
 	Packet::bytearray ToBytes() const {
 		Packet::bytearray ret;
 		Packet::StoreBytes(ret, PlayerName);
 		Packet::StoreBytes(ret, State);
+		Packet::StoreBytes(ret, IsHost);
 		return ret;
 	}
 
 	Packet::byte_view FromBytes(Packet::byte_view view) {
 		Packet::LoadBytes(view, PlayerName);
 		Packet::LoadBytes(view, State);
+		Packet::LoadBytes(view, IsHost);
 		return view;
 	}
+};
+
+struct GameRule {
+	int Width = 10;
+	int Height = 20;
+	int NextCount = 5;
+	double GravitySpeedRate = 1.0;
 };
 
 struct GameData {
 	std::vector<std::vector<Myno>> Board;
 	std::vector<PlayerData> PlayerDatas = std::vector<PlayerData>(1);
 	Scene NowScene = Scene::Init;
+	GameRule Rule = GameRule();
 	int Attack = 0;
 	int Damage = 0;
 	int MyIndex = 0;
@@ -78,6 +89,7 @@ struct GameData {
 		}
 		Packet::StoreBytes(ret, PlayerDatas);
 		Packet::StoreBytes(ret, NowScene);
+		Packet::StoreBytes(ret, Rule);
 		Packet::StoreBytes(ret, Attack);
 		Packet::StoreBytes(ret, Damage);
 		Packet::StoreBytes(ret, MyIndex);
@@ -96,6 +108,7 @@ struct GameData {
 		}
 		Packet::LoadBytes(view, PlayerDatas);
 		Packet::LoadBytes(view, NowScene);
+		Packet::LoadBytes(view, Rule);
 		Packet::LoadBytes(view, Attack);
 		Packet::LoadBytes(view, Damage);
 		Packet::LoadBytes(view, MyIndex);

@@ -163,6 +163,7 @@
     <ClInclude Include="Source\Game\Result.cpp" />
     <ClInclude Include="Source\Game\Skin.h" />
     <ClInclude Include="Source\Game\Multi.h" />
+    <ClInclude Include="Source\Game\Lobby.h" />
     <ClInclude Include="Source\Socket\common.h" />
     <ClInclude Include="Source\Socket\Cryptgraphy\AES128.h" />
     <ClInclude Include="Source\Socket\Cryptgraphy\common.h" />
