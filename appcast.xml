@@ -5,10 +5,10 @@
     <description>GUI-Tetris Updater</description>
     <language>jp</language>
     <item>
-      <title>Version 1.0.1</title>
+      <title>Version 1.0.2</title>
       <sparkle:releaseNotesLink>https://apopic.github.io/GUI-Tetris/release_notes.html</sparkle:releaseNotesLink>
-      <pubDate>Saturday, May 23, 2026, 21:20</pubDate>
-      <enclosure url="https://github.com/Apopic/GUI-Tetris/releases/download/1.0.1/Setup.msi" sparkle:version="1.0.1" type="application/octet-stream" sparkle:edSignature="cR4o56pGoKMBD6qSRcNas04glqChzjisG0JfJW4IMgzxGFJUrx0YFD6qGdVHFbNgy7bV/CIH44HR7NEqNCLWBQ==" length="34248704"/>
+      <pubDate>Sunday, May 24, 2026, 15:09</pubDate>
+      <enclosure url="https://github.com/Apopic/GUI-Tetris/releases/download/1.0.2/Setup.msi" sparkle:version="1.0.2" type="application/octet-stream" sparkle:edSignature="O9eneeXmouqtXKBO0ossLiYyHWPTpJtQ7y61DUi+sswzi2hnxqWzmPKyL87Yjf2MfAfknNm6pAK3p3VWq+Z2Cw==" length="34253312"/>
     </item>
   </channel>
 </rss>
